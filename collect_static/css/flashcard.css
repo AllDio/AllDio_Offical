@@ -1,0 +1,119 @@
+/*body{*/
+/*  display:flex;*/
+/*  margin:0;*/
+/*  padding:0;*/
+/*  min-height: 100vh;*/
+/*  background: #444;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  font-family: arial;*/
+/*}*/
+
+.xcontainer {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.xcontainer .cardx {
+    position: relative;
+}
+
+.xcontainer .cardx .face {
+    width: 280px;
+    height: 170px;
+    transition: 2s;
+    border-radius: 10px;
+}
+
+.xcontainer .cardx .face.face1 {
+    position: relative;
+    background: rgba(76, 155, 150, 0.94);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.xcontainer .cardx:hover .face.face1 {
+    transform: translateY(0);
+    box-shadow: inset 0 0 60px whitesmoke,
+        /*inset 20px 0 80px #f0f,*/ /*inset -20px 0 80px #0ff,*/ /*inset 20px 0 300px #f0f,*/ /*inset -20px 0 300px #0ff,*/ 0 0 50px #fff,
+        /*-10px 0 80px #f0f,*/ 10px 0 80px #0ff;
+    opacity: 0.3;
+}
+
+.xcontainer .cardx .face.face1 .content {
+    opacity: .9;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.xcontainer .cardx:hover .face.face1 .content {
+    opacity: 0.1;
+
+}
+
+.xcontainer .cardx .face.face1 .content i {
+    font-size: 3em;
+    color: white;
+    display: inline-block;
+}
+
+.xcontainer .cardx .face.face1 .content h3 {
+    font-size: 1em;
+    color: white;
+    text-align: center;
+}
+
+.xcontainer .cardx .face.face1 .content a {
+    transition: .8s;
+
+}
+
+.xcontainer .cardx .face.face2 {
+    position: relative;
+    background: rgba(245, 245, 245, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 20px rgba(222, 165, 165, 0.8);
+    transform: translateY(-70px);
+    opacity: 0.4;
+}
+
+
+.xcontainer .cardx:hover .face.face2 {
+    transform: translateY(-40px);
+    opacity: 0.95;
+}
+
+.xcontainer .cardx .face.face2 .content p, a {
+    font-size: 10pt;
+    margin: 0;
+    padding: 0;
+    rgba(73, 162, 157, 0.94);
+}
+
+.xcontainer .cardx .face.face2 .content a {
+    text-decoration: none;
+    color: rgba(73, 162, 157, 0.94);
+    box-sizing: border-box;
+    outline: 1px dashed rgba(73, 162, 157, 0.94);
+    padding: 10px;
+    margin: 15px 0 0;
+    display: inline-block;
+}
+
+.xcontainer .cardx .face.face2 .content a:hover {
+    background: rgba(73, 162, 157, 0.94);
+    color: whitesmoke;
+    box-shadow: inset 0px 0px 10px rgba(73, 162, 157, 0.94);
+}

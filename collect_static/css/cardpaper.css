@@ -1,0 +1,244 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+
+/**, *:before, *:after {*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+body {
+    /*background: linear-gradient(to bottom, rgb(140, 122, 122) 0%, rgb(175, 135, 124) 65%, rgb(175, 135, 124) 100%) fixed;*/
+    /*background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg") no-repeat center center fixed;*/
+    /*background-size: cover;*/
+    font: 14px/20px "Lato", Arial, sans-serif;
+    /*color: #9E9E9E;*/
+    /*margin-top: 30px;*/
+}
+
+/*.slide-container {*/
+/*    margin: auto;*/
+/*    width: 600px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.wrapper {*/
+/*    padding-top: 40px;*/
+/*    padding-bottom: 40px;*/
+/*}*/
+
+/*.wrapper:focus {*/
+/*    outline: 0;*/
+/*}*/
+
+.clash-card {
+    background: white;
+    width: 300px;
+    display: inline-block;
+    margin: auto;
+    border-radius: 19px;
+    position: relative;
+    text-align: center;
+    box-shadow: -1px 15px 30px -12px black;
+    z-index: 9999;
+}
+
+.clash-card__image {
+    position: relative;
+    height: 230px;
+    margin-bottom: 35px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.clash-card__image--barbarian {
+    background: url("https://i.pinimg.com/474x/2b/e8/94/2be89474c58d30d0464fa36ce4e61e5b.jpg");
+}
+
+.clash-card__image--barbarian img {
+    /*width: 200px;*/
+    position: absolute;
+    top: -50px;
+    left: -5px;
+    scale: 1.3;
+}
+
+.clash-card__image--archer {
+    background: url("https://i.pinimg.com/474x/d6/d0/bd/d6d0bdfdbdb9db439b8033c7681976dc.jpg");
+}
+
+.clash-card__image--archer img {
+    position: absolute;
+    top: -55px;
+    left: -10px;
+    scale: 1.1;
+}
+
+.clash-card__image--wizard {
+    background: url("https://i.pinimg.com/474x/bd/39/24/bd3924b05bbbebb30f6cba443e4e8a72.jpg");
+}
+
+.clash-card__image--wizard img {
+    position: absolute;
+    top: -57px;
+    left: 15px;
+    scale: 1.16;
+}
+
+
+.clash-card__image--giant {
+    background: url("https://i.pinimg.com/474x/70/e2/f9/70e2f9d4191154624f58c15eb684e27a.jpg");
+}
+
+.clash-card__image--giant img {
+    position: absolute;
+    top: -55px;
+    left: 1px;
+    scale: 1.05;
+    /*rotate: -15deg;*/
+}
+
+.clash-card__image--goblin {
+    background: url("https://i.pinimg.com/474x/c7/54/2c/c7542c51a6049e86be692a7c2bde9a15.jpg");
+}
+
+.clash-card__image--goblin img {
+    position: absolute;
+    top: -50px;
+    left: 15px;
+    scale: 1.2;
+}
+
+
+.clash-card__level {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.clash-card__level--barbarian {
+    color: #EC9B3B;
+}
+
+.clash-card__level--archer {
+    color: #EE5487;
+}
+
+.clash-card__level--giant {
+    color: #6259de;
+}
+
+.clash-card__level--goblin {
+    color: #82BB30;
+}
+
+.clash-card__level--wizard {
+    color: #c935b8;
+}
+
+.clash-card__unit-name {
+    font-size: 26px;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.clash-card__unit-description {
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.clash-card__unit-stats--barbarian {
+    background: #EC9B3B;
+}
+
+.clash-card__unit-stats--barbarian .one-third {
+    border-right: 1px solid #efc28d;
+}
+
+.clash-card__unit-stats--archer {
+    background: #EE5487;
+}
+
+.clash-card__unit-stats--archer .one-third {
+    border-right: 1px solid #e19db3;
+}
+
+.clash-card__unit-stats--giant {
+    background: #847dce;
+}
+
+.clash-card__unit-stats--giant .one-third {
+    border-right: 1px solid #bdb9e8;
+}
+
+.clash-card__unit-stats--goblin {
+    background: #80ad3f;
+}
+
+.clash-card__unit-stats--goblin .one-third {
+    border-right: 1px solid #c1e392;
+}
+
+.clash-card__unit-stats--wizard {
+    background: #a13f96;
+}
+
+.clash-card__unit-stats--wizard .one-third {
+    border-right: 1px solid #c770b9;
+}
+
+.clash-card__unit-stats {
+    color: white;
+    font-weight: 700;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+.clash-card__unit-stats .one-third {
+    width: 33%;
+    float: left;
+    padding: 20px 15px;
+}
+
+.clash-card__unit-stats sup {
+    position: absolute;
+    bottom: 4px;
+    font-size: 45%;
+    margin-left: 2px;
+}
+
+.clash-card__unit-stats .stat {
+    position: relative;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.clash-card__unit-stats .stat-value {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.clash-card__unit-stats .no-border {
+    border-right: none;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.slick-prev {
+    left: 100px;
+    z-index: 999;
+}
+
+.slick-next {
+    right: 100px;
+    z-index: 999;
+}
+
+/*# sourceMappingURL=cardpaper.css.map */

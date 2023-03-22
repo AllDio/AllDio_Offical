@@ -1,0 +1,123 @@
+
+.aa {
+    position: absolute;
+    z-index: -1;
+    /*left: 1%;*/
+    bottom: 43.5%;
+    font-size: 35px;
+    color: white;
+    opacity: 0.95;
+    font-family: Raleway, serif;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.bb {
+    position: absolute;
+    z-index: 1;
+}
+
+.dd {
+    position: absolute;
+    width: 100%;
+    /*z-index: -1;*/
+    bottom: 8%;
+    font-size: 17px;
+    color: white;
+    opacity: 0.8;
+    font-weight: 180;
+    font-family: Raleway, serif;
+    letter-spacing: 1.5px;
+}
+
+.cc {
+    position: absolute;
+    z-index: 2;
+    top: 15%;
+    left: 12%;
+    font-size: 17px;
+    color: white;
+    opacity: 0.8;
+    font-weight: 180;
+    font-family: Raleway, serif;
+    letter-spacing: 1.5px;
+}
+
+.ee {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    right: 3%;
+    font-size: 13px;
+    color: white;
+    opacity: 0.8;
+    font-weight: 500;
+    font-family: Raleway, serif;
+    letter-spacing: 1px;
+}
+
+.ff {
+    position: absolute;
+    z-index: 2;
+    bottom: 35%;
+    font-size: 13px;
+    color: white;
+    opacity: 0.95;
+    font-weight: 600;
+    font-family: Raleway, serif;
+    /*letter-spacing: 1px;*/
+    /*scale: 1.5;*/
+}
+
+/*.gg {*/
+/*    position: absolute;*/
+/*    z-index: 3;*/
+/*    bottom: 25%;*/
+/*    font-size: 13px;*/
+/*    color: white;*/
+/*    opacity: 0.8;*/
+/*    font-weight: 500;*/
+/*    font-family: Raleway, serif;*/
+/*    !*letter-spacing: 1px;*!*/
+/*    !*scale: 1.5;*!*/
+/*}*/
+
+/* ------------------------------------------------------------------------------------------------ */
+
+.wrapper {
+    position: absolute;
+    width: 100%;
+    /*height: 10%;*/
+    /*bottom: 28%;*/
+    /*This part is important for centering*/
+    display: grid;
+    place-items: center;
+}
+
+.typing-demo {
+    width: 32ch;
+    animation: typing 3s steps(31), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    font-size: 1.7em;
+    /*color: rgba(232, 141, 124, 0.94);*/
+    color: gainsboro;
+    letter-spacing: 0.5px;
+    /*opacity: 0.8;*/
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+/*@keyframes blink {*/
+/*    50% {*/
+/*        border-color: transparent*/
+/*    }*/
+/*}*/
+
+/* --------------------------------------------------*/

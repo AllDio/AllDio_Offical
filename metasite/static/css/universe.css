@@ -1,0 +1,61 @@
+html, body {
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+body {
+  background: linear-gradient(180deg, #373773, #235689, #2a9096, #364a7b, #4a367b, #5e3665, #2c294b, #31437a);
+  background-size: 1600% 1600%;
+  -webkit-animation: skygradient 180s ease infinite;
+  -moz-animation: skygradient 180s ease infinite;
+  -o-animation: skygradient 180s ease infinite;
+  animation: skygradient 180s ease infinite;
+}
+@-webkit-keyframes skygradient {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+@-moz-keyframes skygradient {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+@-o-keyframes skygradient {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+@keyframes skygradient {
+  0%{background-position:50% 0%}
+  50%{background-position:50% 100%}
+  100%{background-position:50% 0%}
+}
+canvas {
+  width: 100%!important; height: 100%!important;
+}
+
+footer {
+  position:fixed;
+  z-index:1000;
+  left:0;
+  bottom:0;
+  display:block;
+  padding:20px;
+  box-sizing:border-box;
+}
+
+footer a {
+  text-decoration:none;
+  display:block;
+  width:50px;
+}
+
+footer a svg {
+  width:100%;
+  max-width:50px;
+  min-width:40px;
+  display:inline-block;
+}

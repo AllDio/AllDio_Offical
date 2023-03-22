@@ -1,0 +1,286 @@
+/** {*/
+/*    border: 0;*/
+/*    box-sizing: border-box;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+:root {
+    --hue: 223;
+    --bg: hsl(var(--hue), 90%, 95%);
+    --fg: hsl(var(--hue), 90%, 5%);
+    /*font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));*/
+}
+
+/*body {*/
+/*    background-color: var(--bg);*/
+/*    color: var(--fg);*/
+/*    font: 1em/1.5 sans-serif;*/
+/*    height: 100vh;*/
+/*    display: grid;*/
+/*    place-items: center;*/
+/*    transition: background-color 0.3s;*/
+/*}*/
+
+/*main {*/
+/*    padding: 1.5em 0;*/
+/*}*/
+
+.lp {
+    width: 2em;
+    height: 2em;
+}
+
+.lp__drops,
+.lp__fall-line,
+.lp__worm {
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    transform-origin: 64px 64px;
+}
+
+.lp__drops {
+    animation-name: drops;
+    animation-timing-function: ease-in-out;
+    stroke-dasharray: 22 307.85 22;
+    visibility: hidden;
+    transform: rotate(90deg);
+}
+
+.lp__fall-line {
+    animation-name: fallLine1;
+    animation-timing-function: ease-in;
+    stroke-dasharray: 1 112;
+    stroke-dashoffset: 114;
+}
+
+.lp__fall-line--delay1 {
+    animation-name: fallLine2;
+}
+
+.lp__fall-line--delay2 {
+    animation-name: fallLine3;
+}
+
+.lp__fall-line--delay3 {
+    animation-name: fallLine4;
+}
+
+.lp__fall-line--delay4 {
+    animation-name: fallLine5;
+}
+
+.lp__ring {
+    stroke: hsla(var(--hue), 90%, 5%, 0.1);
+    transition: stroke 0.3s;
+}
+
+.lp__worm {
+    animation-name: worm;
+    stroke-dasharray: 43.98 307.87;
+    stroke-dashoffset: -131.94;
+    transform: rotate(-90deg);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: hsl(var(--hue), 90%, 5%);
+        --fg: hsl(var(--hue), 90%, 95%);
+    }
+
+    .lp__ring {
+        stroke: hsla(var(--hue), 90%, 95%, 0.1);
+    }
+}
+
+/* Animtions */
+@keyframes drops {
+    from {
+        animation-timing-function: steps(1, end);
+        stroke-dasharray: 0 351.85 0;
+        visibility: hidden;
+    }
+    25% {
+        animation-timing-function: ease-in-out;
+        stroke-dasharray: 0 351.85 0;
+        visibility: visible;
+    }
+    26% {
+        stroke-dasharray: 4 343.85 4;
+    }
+    27% {
+        stroke-dasharray: 8 335.85 8
+    }
+    28% {
+        stroke-dasharray: 12 327.85 12;
+    }
+    29% {
+        animation-timing-function: ease-in;
+        stroke-dasharray: 17 317.85 17;
+    }
+    32% {
+        animation-timing-function: ease-out;
+        stroke-dasharray: 25 301.85 25;
+    }
+    35%,
+    47.5% {
+        animation-timing-function: linear;
+        stroke-dasharray: 22 307.85 22;
+        visibility: visible;
+    }
+    50% {
+        animation-timing-function: steps(1, end);
+        stroke-dasharray: 0 307.85 43.98;
+        visibility: hidden;
+    }
+    75% {
+        animation-timing-function: ease-in-out;
+        stroke-dasharray: 0 351.85 0;
+        visibility: visible;
+    }
+    76% {
+        stroke-dasharray: 4 343.85 4;
+    }
+    77% {
+        stroke-dasharray: 8 335.85 8
+    }
+    78% {
+        stroke-dasharray: 12 327.85 12;
+    }
+    79% {
+        animation-timing-function: ease-in;
+        stroke-dasharray: 17 317.85 17;
+    }
+    82% {
+        animation-timing-function: ease-out;
+        stroke-dasharray: 25 301.85 25;
+    }
+    85%,
+    97.5% {
+        animation-timing-function: linear;
+        stroke-dasharray: 22 307.85 22;
+        visibility: visible;
+    }
+    to {
+        stroke-dasharray: 43.98 307.85 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fallLine1 {
+    from,
+    15% {
+        stroke-dashoffset: 114;
+    }
+    25%,
+    65% {
+        stroke-dashoffset: 1;
+    }
+    75%,
+    to {
+        stroke-dashoffset: -112;
+    }
+}
+
+@keyframes fallLine2 {
+    from,
+    16% {
+        stroke-dashoffset: 114;
+    }
+    26%,
+    66% {
+        stroke-dashoffset: 1;
+    }
+    76%,
+    to {
+        stroke-dashoffset: -112;
+    }
+}
+
+@keyframes fallLine3 {
+    from,
+    17% {
+        stroke-dashoffset: 114;
+    }
+    27%,
+    67% {
+        stroke-dashoffset: 1;
+    }
+    77%,
+    to {
+        stroke-dashoffset: -112;
+    }
+}
+
+@keyframes fallLine4 {
+    from,
+    18% {
+        stroke-dashoffset: 114;
+    }
+    28%,
+    68% {
+        stroke-dashoffset: 1;
+    }
+    78%,
+    to {
+        stroke-dashoffset: -112;
+    }
+}
+
+@keyframes fallLine5 {
+    from,
+    19% {
+        stroke-dashoffset: 114;
+    }
+    29%,
+    69% {
+        stroke-dashoffset: 1;
+    }
+    79%,
+    to {
+        stroke-dashoffset: -112;
+    }
+}
+
+@keyframes worm {
+    from {
+        animation-timing-function: ease-out;
+        stroke-dasharray: 87.96 307.87;
+        stroke-dashoffset: -131.94;
+    }
+    25% {
+        animation-timing-function: steps(1);
+        stroke-dasharray: 87.96 307.87;
+        stroke-dashoffset: -307.86;
+    }
+    25.01% {
+        animation-timing-function: ease-in;
+        stroke-dasharray: 43.98 307.87;
+        stroke-dashoffset: -307.86;
+    }
+    50% {
+        animation-timing-function: steps(1);
+        stroke-dasharray: 43.98 307.87;
+        stroke-dashoffset: -175.92;
+    }
+    50.01% {
+        animation-timing-function: ease-out;
+        stroke-dasharray: 87.96 307.87;
+        stroke-dashoffset: -131.94;
+    }
+    75% {
+        animation-timing-function: steps(1);
+        stroke-dasharray: 87.96 307.87;
+        stroke-dashoffset: 43.98;
+    }
+    75.01% {
+        animation-timing-function: ease-in;
+        stroke-dasharray: 43.98 307.87;
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dasharray: 43.98 307.87;
+        stroke-dashoffset: -131.94;
+    }
+}

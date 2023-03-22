@@ -1,0 +1,139 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+bodyx {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  /*background: #ECEFF1;*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "DM Sans", system-ui, sans-serif;
+  color: #263238;
+}
+
+.card {
+  width: 22rem;
+  max-width: 90%;
+  border: solid 4px #FFF;
+  border-radius: 2rem;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  background: #ECEFF1;
+  box-shadow: 0 16px 32px #CFD8DC;
+  transition: all 400ms ease;
+}
+.card:hover {
+  background: #FFF;
+}
+.card__body {
+  background: #FFF;
+  border-radius: 1.25rem;
+  padding: 0.75rem;
+}
+.card__top {
+  display: flex;
+  font-weight: 500;
+}
+.card__owner, .card__creator {
+  width: 50%;
+  display: flex;
+}
+.card__owner {
+  position: relative;
+}
+.card__owner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 2px;
+  height: 100%;
+  border-radius: 2px;
+  background: #ECEFF1;
+}
+.card__creator {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.card__avatar {
+  width: 3rem;
+  height: 3rem;
+  background: #ECEFF1;
+  border-radius: 100%;
+  flex-shrink: 0;
+}
+.card__user {
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card__user__title {
+  font-size: 0.75rem;
+  color: #B0BEC5;
+}
+.card__image {
+  padding-top: 75%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0.75rem;
+  border-radius: 1rem;
+  background: #ECEFF1;
+  box-shadow: 0 16px 32px #ECEFF1;
+}
+.card__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__info {
+  margin: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+}
+.card__info p {
+  margin: 0;
+}
+.card__footer {
+  background: #FFF;
+  padding: 0.75rem;
+  border-radius: 0.75rem 0.75rem 1.75rem 1.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card__btn {
+  width: 48%;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 500;
+  transition: all 200ms ease;
+}
+.card__btn--primary {
+  background: #263238;
+  color: #ECEFF1;
+  border-radius: 0.5rem 0.5rem 1.25rem 0.5rem;
+}
+.card__btn--primary:hover {
+  background: rgba(76, 155, 150, 0.94);
+}
+.card__btn--secondary {
+  border-radius: 0.5rem 0.5rem 0.5rem 1.25rem;
+}
+.card__btn--secondary:hover {
+  background: rgb(247, 247, 250);
+  color: rgba(63, 175, 168, 0.97);
+}
+
+/*# sourceMappingURL=cardtrades.css.map */

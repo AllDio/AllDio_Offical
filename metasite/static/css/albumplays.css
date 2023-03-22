@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial");
+/*html {*/
+/*  min-height: 100%;*/
+/*  display: grid;*/
+/*}*/
+
+/*body {*/
+/*  background: linear-gradient(to bottom left, #C0CFB2 10%, #8BA989 80%);*/
+/*  display: grid;*/
+/*  overflow: hidden;*/
+/*}*/
+
+#player {
+    background: #FFFFFF;
+    position: relative;
+    right: 0.9px;
+    scale: 0.98;
+    /*top: -1.2px;*/
+    /*top: -133px;*/
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(54, 79, 60, 0.4);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+#player:hover {
+    transform: scale(1);
+}
+
+.album {
+    background: linear-gradient(rgba(54, 79, 60, 0.25), rgba(73, 101, 77, 0.55));
+    background-repeat: no-repeat;
+    background-size: 300px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.heart {
+    position: absolute;
+    right: 0;
+    color: #FFFFFF;
+    margin: 10px;
+    transition: all 0.4s ease;
+}
+
+.clicked {
+    color: #49654D;
+    transform: scale(1.2);
+    transition: all 0.4s ease;
+}
+
+.infox {
+    height: 115px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    transform: translateY(35px);
+    transition: all 0.7s ease-in-out;
+}
+
+.up {
+    transform: translateY(0px);
+}
+
+.progress-bar {
+    height: 5px;
+    width: 73%;
+    margin: 6% auto;
+    background: #cdd9c2;
+    border-radius: 10px;
+    font-family: "Questrial", sans-serif;
+}
+
+.fill {
+    background-color: #8BA989;
+    width: 35%;
+    height: 0.3rem;
+    border-radius: 2px;
+}
+
+.time--current, .time--total {
+    color: #364F3C;
+    font-size: 7px;
+    position: absolute;
+    /*margin-top: -2px;*/
+    margin: 15px;
+}
+
+.time--current {
+    left: 15px;
+}
+
+.time--total {
+    right: 15px;
+}
+
+.currently-playing {
+    text-align: center;
+    margin-top: -3px;
+}
+
+.song-name, .artist-name {
+    font-family: "Questrial", sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.song-name {
+    font-size: 0.8em;
+    letter-spacing: 3px;
+    color: #364F3C;
+}
+
+.artist-name {
+    font-size: 0.6em;
+    letter-spacing: 1.5px;
+    color: #557c5f;
+    margin-top: 5px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    font-size: 0.8em;
+    justify-content: center;
+    color: #8BA989;
+}
+
+.controls .play, .controls .pause {
+    margin: 15px 25px;
+    color: #6e946c;
+}
+
+.controls .option {
+    left: 10px;
+    position: absolute;
+    font-size: 0.8em;
+}
+
+.controls .add {
+    right: 10px;
+    position: absolute;
+    font-size: 0.8em;
+}
+
+.controls .volume {
+    margin-right: 30px;
+    font-size: 0.8em;
+}
+
+.controls .shuffle {
+    margin-left: 30px;
+    font-size: 0.8em;
+}
+
+.play, .pause, .next, .previous, .option, .add, .volume, .shuffle {
+    transition: all 0.5s ease;
+}
+
+.play:hover, .pause:hover, .next:hover, .previous:hover, .option:hover, .add:hover, .volume:hover, .shuffle:hover {
+    color: #557c5f;
+}
+
+/*footer {*/
+/*  position: absolute;*/
+/*  bottom: 0;*/
+/*  right: 0;*/
+/*  text-align: center;*/
+/*  font-size: 0.5em;*/
+/*  text-transform: uppercase;*/
+/*  padding: 10px;*/
+/*  color: #49654D;*/
+/*  letter-spacing: 3px;*/
+/*  font-family: "Questrial", sans-serif;*/
+/*}*/
+/*footer a {*/
+/*  color: #ffffff;*/
+/*  text-decoration: none;*/
+/*}*/
+/*footer a:hover {*/
+/*  color: #49654D;*/
+/*}*/
+
+/*# sourceMappingURL=albumplays.css.map */

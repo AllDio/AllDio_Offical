@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alldio Signup</title>
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="../static/css/uv.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/metasign.css"/>
+    <link rel="stylesheet" href="../static/css/library.css"/>
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../static/img/alldio_white.png"/>
+    <link rel="apple-touch-icon" href="../static/img/alldio_white.png"/>
+</head>
+<body>
+
+<main style="width: 100%;height:100%">
+    <!-- PreLoading-->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,300,400,500,600,700,800');
+    </style>
+
+    <!-- Top Logo-->
+    <div style="height: 6%;width: 10%">
+        <div style="height: 10%"></div>
+        <img src="../static/img/alldio_black.png"
+             style="height: 50px;width: 50px;scale: 0.95;float: left;margin-left: 10px;opacity: 0.6;"
+             alt=""/>
+    </div>
+
+    <!-- Menu Title -->
+    <div class="inline-flex ee">
+        {% for title in titles %}
+        <button style="letter-spacing: 1px;height: 50px">
+            <div class="lg:pd-15 md:pd-12 sm:pd-6 sx:pd-3" style="width: 100%">
+                {% if forloop.last %}
+                <div id="username_show" style="color: #2B3A42;font-weight: 800">LET'S MUSIC</div>
+                {% else %}
+                {% if forloop.counter == 5 %}
+                <a style="color: #2B3A42;opacity: 0.3">{{ title.name }}</a>
+                {% else %}
+                <a href="{{ title.href }}" style="color: #2B3A42">{{ title.name }}</a>
+                {% endif %}
+                {% endif %}
+            </div>
+        </button>
+        {% endfor %}
+    </div>
+
+    <div style="height: 100%;width:100%">
+
+        <div style="height: 100px"></div>
+
+        <div style="text-align: center;font-family: Raleway,serif">
+            <div style="font-weight: 300;font-size: 50px;letter-spacing:2px;color:white;opacity: 0.8">
+                <div style="font-weight: 1000;display: inline-flex;color: black;">Join Us</div>
+            </div>
+        </div>
+
+        <div style="height: 80px"></div>
+
+        <!--        <div style="height: 28%"></div>-->
+        <div style="height: 150px">
+            <!-- Animation Canvas-->
+            <div style="height: 100%;width:100%;scale: 1.01;float: bottom">
+                <div style="width:100%;height: 100%;float: bottom">
+                    <canvas class="canvas rounded-b-lg" width="430" height="150" style="margin: 0 auto;"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signup -->
+        <div style="height: 300px;width:100%">
+            <div class="registration-form" style="position: relative;width: 100%;max-width: 440px;height: 75%">
+                <!-- Sign Title-->
+                <header style="width:100%;letter-spacing: 0.5px" id="logtitle">
+                    <div style="width:100%" class="inline-flex">
+                        <div style="width: 80%" class="crossfade hover">
+                            <button id="logtype"
+                                    style="font-weight: 700;font-size: 24px;letter-spacing: 1px;color: black"> SIGN UP
+                            </button>
+                            <button id="logicon" class="crossfade hover fa fa-arrow-circle-right"
+                                    style="font-size: 25px;margin-left: 5px;scale: 0.7;opacity: 0.8"><i></i>
+                            </button>
+                        </div>
+                        <button id="rest_password" style="margin-right: -55px;width: 30%;height:40px;line-height: 40px"
+                                class="inline-flex">
+                            <div style="font-size: 9px;color: rgba(204,202,202,0.84);letter-spacing: 0.5px"
+                                 class="crossfade hover"
+                            > forget password ?
+                            </div>
+                        </button>
+                    </div>
+
+                    <button>
+                        <p id="loghint" style="font-weight: 300;font-size: 12px"
+                        > Switch to Sign-In / Create an new account </p>
+                    </button>
+                </header>
+
+                <!-- LogOut -->
+                <header id="logouttitle" style="width:100%;letter-spacing: 0.5px" class="hidden">
+                    <div style="width:100%" class="inline-flex">
+                        <div style="width: 80%" class="crossfade hover">
+                            <button id="logtype"
+                                    style="font-weight: 700;font-size: 24px;letter-spacing: 1px;color: black"> LOG OUT
+                            </button>
+                            <button id="logicon" class="crossfade hover fa fa-arrow-circle-right"
+                                    style="font-size: 25px;margin-left: 5px;scale: 0.7;opacity: 0.8"><i></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button>
+                        <p id="loghint" style="font-weight: 300;font-size: 12px"
+                        > Click to log out your account</p>
+                    </button>
+                </header>
+
+                <!-- Log Status Hide-->
+                <label for="logstatus"></label><input id="logstatus" value="login" hidden>
+
+                <!-- Input Form -->
+                <form style="width: 100%;height: 40%">
+                    <div id="login_group">
+                        <!-- login email -->
+                        <div class="input-section username-section login">
+                            <input id="username" style="font-size: 16px;letter-spacing: 1px"
+                                   class="username" type="email" readonly="readonly"
+                                   placeholder="Enter your email" autocomplete="off"/>
+                            <div class="animated-button">
+                                <span class="icon-username"> <i class="fa fa-envelope-o"></i> </span>
+                                <span class="next-button username"><i class="fa fa-arrow-up"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- login password -->
+                        <div class="input-section loginpassword-section login folded">
+                            <div id="login_backemail" class="animated-button" style="width: 8%">
+                                <span> <i style="font-size: 15px" class="fa fa-chevron-left"></i> </span>
+                            </div>
+                            <input id="loginpassword" style="font-size: 16px;letter-spacing: 1px"
+                                   class="loginpassword" type="password" readonly="readonly"
+                                   placeholder="Enter your password" autocomplete="off" disabled="disabled"/>
+                            <div class="animated-button">
+                                <span class="icon-loginpassword"> <i class="fa fa-lock"></i> </span>
+                                <span id="go_login" class="next-button loginpassword"> <i
+                                        class="fa fa-arrow-up"></i> </span>
+                                <span id="loginload" class="hidden next-button loginpassword"><i
+                                        class="fa fa-wifi"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="signup_group">
+                        <!-- signup invitecode -->
+                        <div class="input-section invite-section signup">
+                            <input id="invite" style="font-size: 16px;letter-spacing: 1px"
+                                   class="invite" type="text" readonly="readonly"
+                                   placeholder="Enter your invite code" autocomplete="off"/>
+                            <div class="animated-button">
+                                <span class="icon-invite"> <i class="fa fa-gift"></i> </span>
+                                <span id="invitecode" class="next-button invite"><i class="fa fa-arrow-up"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- signup email -->
+                        <div class="input-section email-section folded signup">
+                            <div id="signup_backinvite" class="animated-button" style="width: 8%">
+                                <span> <i style="font-size: 15px" class="fa fa-chevron-left"></i> </span>
+                            </div>
+                            <input id="email" disabled="disabled" style="font-size: 16px;letter-spacing: 1px;"
+                                   class="email" type="email" readonly="readonly"
+                                   placeholder="Enter your email" autocomplete="off"/>
+                            <div class="animated-button">
+                                <span class="icon-paper-plane"> <i class="fa fa-envelope-o"></i> </span>
+                                <span id="email_confirm" class="next-button email"> <i
+                                        class="fa fa-arrow-up"></i> </span>
+                                <span id="signupemailload" class="hidden next-button resetusername"><i
+                                        class="fa fa-wifi"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- signup emailcode -->
+                        <div class="input-section code-section folded signup">
+                            <div id="signup_backemail" class="animated-button" style="width: 8%">
+                                <span class="icon-username"> <i style="font-size: 15px" class="fa fa-chevron-left"></i> </span>
+                            </div>
+                            <input id="code" disabled="disabled" style="font-size: 16px;letter-spacing: 1px"
+                                   class="code" type="text" readonly="readonly"
+                                   placeholder="Email received code" autocomplete="off"/>
+                            <div class="animated-button">
+                                <span class="icon-qrcode"> <i class="fa fa-qrcode"></i> </span>
+                                <span id="code_back" class="next-button code"> <i class="fa fa-arrow-up"></i> </span>
+                            </div>
+                        </div>
+
+                        <!-- signup password -->
+                        <div class="input-section password-section folded signup">
+                            <div id="signup_backcode" class="animated-button" style="width: 8%">
+                                <span class="icon-username"> <i style="font-size: 15px" class="fa fa-chevron-left"></i> </span>
+                            </div>
+                            <input id="password" disabled="disabled" style="font-size: 16px;letter-spacing: 1px"
+                                   class="password" type="text" readonly="readonly"
+                                   placeholder="Enter your password" autocomplete="off"/>
+                            <div class="animated-button">
+                                <span class="icon-lock"> <i class="fa fa-lock"></i> </span>
+                                <span class="next-button password"> <i class="fa fa-arrow-up"></i> </span>
+                            </div>
+                        </div>
+
+                        <!-- signup confirm password -->
+                        <div class="input-section repeat-password-section folded signup">
+                            <div id="signup_backpassword" class="animated-button" style="width: 8%">
+                                <span class="icon-username"> <i style="font-size: 15px" class="fa fa-chevron-left"></i> </span>
+                            </div>
+                            <input id="confirm_password" disabled="disabled" style="font-size: 16px;letter-spacing: 1px"
+                                   class="repeat-password" type="text" autocomplete="off"
+                                   placeholder="Repeat password"/>
+                            <div id="final_signup" class="animated-button">
+                                <span class="icon-repeat-lock"> <i class="fa fa-lock"></i> </span>
+                                <span class="next-button repeat-password"> <i class="fa fa-paper-plane"></i> </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="reset_group">
+                        <!-- reset email -->
+                        <div class="input-section resetusername-section reset">
+                            <input id="resetusername" style="font-size: 16px;letter-spacing: 1px"
+                                   class="resetusername" type="email" readonly="readonly"
+                                   placeholder="Enter your reset email" autocomplete="off"/>
+                            <div class="animated-button">
+                                <span class="icon-resetusername"> <i class="fa fa-envelope-o"></i> </span>
+                                <span id="resetemailcheck" class="next-button resetusername"><i
+                                        class="fa fa-arrow-up"></i></span>
+                                <span id="resetemailload" class="hidden next-button resetusername"><i
+                                        class="fa fa-wifi"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- reset emailcode -->
+                        <div class="input-section resetemailcode-section reset folded">
+                            <div id="reset_backusername" class="animated-button" style="width: 8%">
+                                <span class="icon-username"> <i style="font-size: 15px" class="fa fa-chevron-left"></i> </span>
+                            </div>
+                            <input id="resetemailcode" style="font-size: 16px;letter-spacing: 1px"
+                                   class="resetemailcode" type="email" readonly="readonly"
+                                   placeholder="Enter your received code" autocomplete="off"/>
+                            <div class="animated-button">
+                                <span class="icon-resetemailcode"> <i class="fa fa-qrcode"></i> </span>
+                                <span id="resetemailcode_check" class="next-button resetemailcode"><i
+                                        class="fa fa-arrow-up"></i></span>
+                            </div>
+                        </div>
+
+                        <!-- resetlogin password -->
+                        <div class="input-section resetloginpassword-section reset folded">
+                            <div id="reset_backemailcode" class="animated-button" style="width: 8%">
+                                <span class="icon-username"> <i style="font-size: 15px" class="fa fa-chevron-left"></i> </span>
+                            </div>
+                            <input id="resetloginpassword" style="font-size: 16px;letter-spacing: 1px"
+                                   class="resetloginpassword" type="password" readonly="readonly"
+                                   placeholder="Enter your new password" autocomplete="off"/>
+                            <div class="animated-button">
+                                <span class="icon-resetloginpassword"> <i class="fa fa-lock"></i> </span>
+                                <span id="resetconfirm_password" class="next-button resetloginpassword"> <i
+                                        class="fa fa-arrow-up"></i> </span>
+                            </div>
+                        </div>
+
+                        <!-- restconfirm password -->
+                        <div class="input-section resetconfirmpassword-section reset folded">
+                            <div id="reset_backpassword" class="animated-button" style="width: 8%">
+                                <span class="icon-username"> <i style="font-size: 15px" class="fa fa-chevron-left"></i> </span>
+                            </div>
+                            <input id="resetconfirmpassword" style="font-size: 16px;letter-spacing: 1px"
+                                   class="resetconfirmpassword" type="password" readonly="readonly"
+                                   placeholder="Confirm your new password" autocomplete="off"/>
+                            <div id="go_reset" class="animated-button">
+                                <span class="icon-resetconfirmpassword"> <i class="fa fa-lock"></i> </span>
+                                <span id="resetconfirm" class="next-button resetconfirmpassword"><i
+                                        class="fa fa-arrow-up"></i></span>
+                                <span id="resetload" class="hidden next-button resetusername"><i class="fa fa-wifi"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script src="../static/js/jquery-3.5.1.min.js"></script>
+                    <script src="../static/js/jquery-3.5.1.min.js"></script>
+                    <script>
+                        //  =====> [back_click]
+                        $("#login_backemail").click(
+                            function () {
+                                $('.loginpassword-section').addClass("folded");
+                                $('.username-section').removeClass("fold-up");
+                                $('#loginpassword').attr('disabled', 'disabled');
+                            }
+                        )
+
+                        $("#signup_backinvite").click(
+                            function () {
+                                $('.email-section').addClass("folded");
+                                $('.invite-section').removeClass("fold-up");
+                            }
+                        )
+
+                        $("#signup_backemail").click(
+                            function () {
+                                $('.code-section').addClass("folded");
+                                $('.email-section').removeClass("fold-up");
+                            }
+                        )
+
+                        $("#signup_backcode").click(
+                            function () {
+                                $('.password-section').addClass("folded");
+                                $('.code-section').removeClass("fold-up");
+                            }
+                        )
+
+                        $("#signup_backpassword").click(
+                            function () {
+                                $('.repeat-password-section').addClass("folded");
+                                $('.password-section').removeClass("fold-up");
+                            }
+                        )
+
+                        $("#reset_backusername").click(
+                            function () {
+                                $('.resetemailcode-section').addClass("folded");
+                                $('.resetusername-section').removeClass("fold-up");
+                            }
+                        )
+
+                        $("#reset_backemailcode").click(
+                            function () {
+                                $('.resetloginpassword-section').addClass("folded");
+                                $('.resetemailcode-section').removeClass("fold-up");
+                            }
+                        )
+
+                        $("#reset_backpassword").click(
+                            function () {
+                                $('.resetconfirmpassword-section').addClass("folded");
+                                $('.resetloginpassword-section').removeClass("fold-up");
+                            }
+                        )
+
+                        //  =====> [main_input] email code password confirm_password
+                        $("#invitecode").click(
+                            function () {
+                                $.ajax({
+                                    type: "post",
+                                    url: "{% url 'invitecode' %}",
+                                    data: {
+                                        "invite_code": $("#invite").val(),
+                                    },
+                                    success: function (data) {
+                                        if (data === 'success') {
+                                            $("#email").removeAttr('disabled','disabled');
+                                            $('.invite-section').addClass("fold-up");
+                                            $('.email-section').removeClass("folded");
+                                        } else {
+                                            $("#loghint").text(data)
+                                        }
+                                    },
+                                    error: function () {
+                                    },
+                                })
+                            }
+                        )
+
+                        $('#email_confirm').click(
+                            function () {
+                                $("#signupemailload").show()
+                                $("#email_confirm").hide()
+                                $("#loghint").text('sending now ...')
+                                $.ajax({
+                                    type: "get",
+                                    url: "{% url 'email_check' %}",
+                                    data: {
+                                        "email": $("#email").val(),
+                                        "type": 'signup',
+                                    },
+                                    success: function (data) {
+                                        if (data === 'success') {
+                                            $("#code").removeAttr('disabled','disabled');
+                                            $('.email-section').addClass("fold-up");
+                                            $('.code-section').removeClass("folded");
+                                            $("#loghint").text('continue to fill in the information')
+                                        } else {
+                                            $("#loghint").text(data)
+                                        }
+                                        t = setTimeout(function () {
+                                            $("#signupemailload").hide()
+                                            $("#email_confirm").show()
+                                        }, 1500)
+                                    },
+                                    error: function () {
+                                    },
+                                });
+                            }
+                        );
+
+                        $('#code_back').click(
+                            function () {
+                                $.ajax({
+                                    type: "get",
+                                    url: "{% url 'email_codecheck' %}",
+                                    data: {
+                                        "code": $("#code").val(),
+                                    },
+                                    success: function (data) {
+                                        if (data === 'success') {
+                                            $("#password").removeAttr('disabled','disabled');
+                                            $('.code-section').addClass("fold-up");
+                                            $('.password-section').removeClass("folded");
+                                        } else {
+                                            $("#loghint").text(data)
+                                        }
+                                    },
+                                    error: function () {
+                                    },
+                                });
+                            }
+                        );
+
+                        $('#final_signup').click(
+                            function () {
+                                // $('#final_signup').attr('disabled', 'disabled')
+                                if ($("#password").val().length > 0) {
+                                    if ($("#password").val() === $("#confirm_password").val()) {
+                                        $("#logtype").text('signin now ...')
+                                        $.ajax({
+                                            type: "get",
+                                            url: "{% url 'create_user' %}",
+                                            data: {
+                                                "password": $("#password").val(),
+                                                "email": $("#email").val(),
+                                                "emailcode": $("#code").val(),
+                                                "invitecode": $("#invite").val(),
+                                            },
+                                            success: function (data) {
+                                                if (data === 'success') {
+                                                    $('.repeat-password-section').addClass("fold-up");
+                                                    $('.signsuccess').css("marginTop", 0);
+                                                    $("#logtype").text("LOG IN")
+                                                    $("#loghint").text('The account has been created successfully')
+                                                } else {
+                                                    $("#loghint").text(data)
+                                                }
+                                            },
+                                            error: function () {
+                                                alert('error')
+                                            },
+                                        });
+                                    } else {
+                                        $("#loghint").text('The two password entries are inconsistent')
+                                        $('#final_signup').removeAttr('disabled', 'disabled')
+                                    }
+                                } else {
+                                    alert('password empty')
+                                }
+                            }
+                        );
+
+                        $('#go_login').click(
+                            function () {
+                                $("#go_login").hide()
+                                $("#loginload").show()
+                                $.ajax({
+                                    type: "post",
+                                    url: "{% url 'login_check' %}",
+                                    data: {
+                                        "email": $("#username").val(),
+                                        "password": $("#loginpassword").val(),
+                                    },
+                                    success: function (data) {
+                                        if (data === 'success') {
+                                            $("#loghint").text("Switch to Sign-In / Create an new account")
+                                            $('.loginpassword-section').addClass("fold-up");
+                                            $('.logsuccess').css("marginTop", 0);
+                                            $('#logtitle').hide()
+                                            $('#logouttitle').show()
+                                            $('#username_show').text($("#username").val().split('@')[0])
+                                            t = setTimeout(function () {
+                                                window.location.href = '{% url "usrpanel" %}'
+                                            }, 500);
+                                        } else {
+                                            $("#loghint").text(data)
+                                        }
+                                    },
+                                    error: function () {
+                                    },
+                                });
+                            }
+                        );
+
+
+                        $('#resetemailcheck').click(
+                            function () {
+                                $("#resetemailcheck").hide()
+                                $("#resetemailload").show()
+                                $.ajax({
+                                    type: "get",
+                                    url: "{% url 'email_check' %}",
+                                    data: {
+                                        "email": $("#resetusername").val(),
+                                        "type": 'reset',
+                                    },
+                                    success: function (data) {
+                                        if (data === 'success') {
+                                            $('.resetusername-section').addClass("fold-up");
+                                            $('.resetemailcode-section').removeClass("folded");
+                                        } else {
+                                            $("#loghint").text(data)
+                                        }
+                                        t = setTimeout(function () {
+                                            $("#resetload").hide()
+                                            $("#resetemailcheck").show()
+                                        }, 1500)
+                                    },
+                                    error: function () {
+                                    },
+                                });
+                            }
+                        );
+
+                        $("#resetemailcode_check").click(
+                            function () {
+                                $.ajax({
+                                    type: "get",
+                                    url: "{% url 'email_codecheck' %}",
+                                    data: {
+                                        "code": $("#resetemailcode").val(),
+                                    },
+                                    success: function (data) {
+                                        if (data === 'success') {
+                                            $('.resetemailcode-section').addClass("fold-up");
+                                            $('.resetloginpassword-section').removeClass("folded");
+                                        } else {
+                                            $("#loghint").text(data)
+                                        }
+                                    },
+                                    error: function () {
+                                    },
+                                });
+                            }
+                        )
+
+                        $('#go_reset').click(
+                            function () {
+                                if ($("#resetloginpassword").val() === $("#resetconfirmpassword").val()) {
+                                    $("#resetload").show()
+                                    $("#resetconfirm").hide()
+                                    $.ajax({
+                                        type: "get",
+                                        url: "{% url 'pswrd_reset' %}",
+                                        data: {
+                                            "password": $("#resetloginpassword").val(),
+                                            "email": $("#resetusername").val(),
+                                            "code": $("#resetemailcode").val(),
+                                        },
+                                        success: function (data) {
+                                            if (data === 'success') {
+                                                $('.resetconfirmpassword-section').addClass("fold-up");
+                                                $('.resetsuccess').css("marginTop", 0);
+                                                $("#loghint").text('Password reset successfully, please log in')
+                                            } else {
+                                                $("#loghint").text(data)
+                                            }
+                                            t = setTimeout(function () {
+                                                $("#resetload").hide()
+                                                $("#resetconfirm").show()
+                                            }, 1500)
+                                            $("#logtype").text("LOG IN")
+                                        },
+                                        error: function () {
+                                        },
+                                    });
+                                } else {
+                                    $("#loghint").text('The two password entries are inconsistent')
+                                }
+                            }
+                        )
+
+                        $('#logouttitle').click(
+                            function () {
+                                $.ajax({
+                                    type: "get",
+                                    url: "{% url 'signout' %}",
+                                    data: {},
+                                    success: function (data) {
+                                        window.location.href = "{% url 'signup' %}"
+                                    },
+                                    error: function () {
+                                    },
+                                });
+                            }
+                        )
+
+                    </script>
+
+                    <!-- signup success -->
+                    <div class="signsuccess signup">
+                        <p style="font-size: 17px">ACCOUNT CREATED</p>
+                    </div>
+
+                    <!-- login success -->
+                    <div class="logsuccess login">
+                        <p style="font-size: 17px">LOGIN SUCCESS</p>
+                    </div>
+
+                    <!-- reset success -->
+                    <div class="resetsuccess reset">
+                        <p style="font-size: 17px">RESET SUCCESS</p>
+                    </div>
+                </form>
+
+                <!-- Forbbiden auto fill password -->
+                <script src="../static/js/jquery-3.5.1.min.js"></script>
+                <script>
+                    $("#rest_password").click(function () {
+                        $("#logstatus").val('reset')
+                        $("#logtype").text('Reset Password')
+                        $(".reset").show()
+                        $(".login").hide()
+                        $(".sign").hide()
+                        $("#logicon").removeClass().addClass('crossfade hover fa fa-arrow-circle-up')
+                        $("#loghint").text("Try reset your password")
+                    })
+                    $(".signup").hide()
+                    $(".reset").hide()
+                    $(".login").show()
+                    $("#logtype").text('LOG IN')
+
+                    $("#logicon").click(function () {
+                        $("#logtype").click()
+                    })
+
+                    $("#loghint").click(function () {
+                        $("#logtype").click()
+                    })
+
+                    $("#logtype")
+                        .click(function () {
+                            if ($("#logstatus").val() === 'login') {
+                                $("#logstatus").val('signup')
+                                $(".signup").show()
+                                $(".login").hide()
+                                $("#logtype").text('SIGN UP')
+                                $("#logicon").removeClass().addClass('crossfade hover fa fa-arrow-circle-left')
+                                $("#loghint").text("Switch to Log-In / Online with your account")
+                            } else {
+                                if ($("#logstatus").val() === 'reset') {
+                                    $("#logstatus").val('login')
+                                    $(".signup").hide()
+                                    $(".login").show()
+                                    $(".reset").hide()
+                                    $("#logtype").text('LOG IN')
+                                    $("#logicon").removeClass().addClass('crossfade hover fa fa-arrow-circle-right')
+                                    $("#loghint").text("Switch to Sign-In / Create an new account")
+                                } else {
+                                    $("#logstatus").val('login')
+                                    $(".signup").hide()
+                                    $(".login").show()
+                                    $("#logtype").text('LOG IN')
+                                    $("#logicon").removeClass().addClass('crossfade hover fa fa-arrow-circle-right')
+                                    $("#loghint").text("Switch to Sign-In / Create an new account")
+                                }
+                            }
+                        })
+                    setTimeout(function removeReadonly() {
+                        var invite = document.getElementById("invite");
+                        var email = document.getElementById("email");
+                        var code = document.getElementById("code");
+                        var username = document.getElementById("username");
+                        var loginpassword = document.getElementById("loginpassword");
+                        var password = document.getElementById("password");
+                        var resetusername = document.getElementById("resetusername");
+                        var resetconfirmpassword = document.getElementById("resetconfirmpassword");
+                        var resetemailcode = document.getElementById("resetemailcode");
+                        var resetloginpassword = document.getElementById("resetloginpassword");
+                        invite.removeAttribute("readonly");
+                        email.removeAttribute("readonly");
+                        username.removeAttribute("readonly");
+                        loginpassword.removeAttribute("readonly");
+                        resetusername.removeAttribute("readonly");
+                        resetemailcode.removeAttribute("readonly")
+                        resetloginpassword.removeAttribute("readonly");
+                        resetconfirmpassword.removeAttribute("readonly")
+                        code.removeAttribute("readonly");
+                        password.removeAttribute("readonly");
+                    }, 1000);
+                </script>
+            </div>
+
+            <div style="height: 80px"></div>
+
+            <!-- tyiping hint -->
+            <div style="height: 30px;width:100%">
+                <div class="wrapper" style="height: 20px">
+                    <div class="typing-demo"
+                         style="font-weight: 400;font-size: 17px;color: black;opacity: 0.3;font-family: Raleway,serif">
+                        There's no bad music just no discoverer.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Community -->
+        <div class="block" style="width: 100%;margin-top: 120px">
+            <div class="inline-flex" style="width: 100%;height:5%;scale: 0.98;opacity: 1">
+                <!-- Left Spacer -->
+                <div style="width: 40%"></div>
+
+                <!-- Discord -->
+                <div style="width: 15%">
+                    <a href="https://discord.gg/BRqb9bqzwW">
+                        <svg width="27" height="26" viewBox="0 0 41 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M27.05 21.8c-2.005 0-3.652-1.816-3.652-4.052 0-2.234 1.596-4.067 3.652-4.067 2.057 0 3.685 1.833 3.649 4.067-.035 2.236-1.61 4.052-3.65 4.052m-13.484 0c-2.002 0-3.657-1.816-3.657-4.052 0-2.234 1.597-4.067 3.65-4.067s3.694 1.833 3.659 4.067c-.035 2.236-1.612 4.052-3.652 4.052M34.397 3.404A33.612 33.612 0 0 0 26.023.827a22.96 22.96 0 0 0-1.074 2.181 31.2 31.2 0 0 0-9.294 0 23.061 23.061 0 0 0-1.072-2.18A33.79 33.79 0 0 0 6.202 3.41C.902 11.251-.535 18.898.184 26.436a33.76 33.76 0 0 0 10.27 5.156 24.633 24.633 0 0 0 2.2-3.547 21.735 21.735 0 0 1-3.463-1.654c.29-.21.574-.428.848-.638a24.132 24.132 0 0 0 20.536 0c.278.227.562.443.849.638a21.82 21.82 0 0 1-3.47 1.657 24.407 24.407 0 0 0 2.2 3.544A33.606 33.606 0 0 0 40.43 26.44c.843-8.743-1.44-16.319-6.034-23.036"
+                                  style="fill:#5460e3" fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Twitter -->
+                <div style="width: 15%">
+                    <a href="https://twitter.com/yonshi01038912">
+                        <svg width="26" height="26" viewBox="0 0 40 33" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M.727 29.211a22.858 22.858 0 0 0 12.378 3.628c14.992 0 23.462-12.663 22.952-24.02a16.35 16.35 0 0 0 4.028-4.18 16.143 16.143 0 0 1-4.636 1.27 8.088 8.088 0 0 0 3.549-4.467 16.186 16.186 0 0 1-5.126 1.961 8.067 8.067 0 0 0-5.896-2.55c-5.211 0-9.042 4.864-7.865 9.915C13.4 10.432 7.45 7.218 3.468 2.33 1.352 5.961 2.37 10.71 5.967 13.111a8.043 8.043 0 0 1-3.66-1.009c-.086 3.741 2.595 7.24 6.478 8.02a8.076 8.076 0 0 1-3.646.138 8.079 8.079 0 0 0 7.543 5.607A16.227 16.227 0 0 1 .727 29.211"
+                                  style="fill:#1f9ee1" fill-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Facebook -->
+                <div style="width: 15%">
+                    <a href="https://www.facebook.com/profile.php?id=100089656324715">
+                        <svg style="fill:#1a85bd" fill-rule="evenodd" xmlns="http://www.w3.org/2000/svg" width="26"
+                             height="26" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Instgram -->
+                <div style="width: 40%;">
+                    <a href="https://www.instagram.com/alldiomusic/">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="36"
+                             width="40" viewBox="-1.5036 -10.49725 169.0312 194.9835">
+                            <defs>
+                                <radialGradient fy="578.088" fx="158.429"
+                                                gradientTransform="matrix(0 -1.98198 1.8439 0 -1031.399 454.004)"
+                                                gradientUnits="userSpaceOnUse" xlink:href="#a" r="65" cy="578.088"
+                                                cx="158.429" id="c"/>
+                                <radialGradient fy="473.455" fx="147.694"
+                                                gradientTransform="matrix(.17394 .86872 -3.5818 .71718 1648.351 -458.493)"
+                                                gradientUnits="userSpaceOnUse" xlink:href="#b" r="65" cy="473.455"
+                                                cx="147.694" id="d"/>
+                                <linearGradient id="b">
+                                    <stop stop-color="#3771c8" offset="0"/>
+                                    <stop offset=".128" stop-color="#3771c8"/>
+                                    <stop stop-opacity="0" stop-color="#60f" offset="1"/>
+                                </linearGradient>
+                                <linearGradient id="a">
+                                    <stop stop-color="#fd5" offset="0"/>
+                                    <stop stop-color="#fd5" offset=".1"/>
+                                    <stop stop-color="#ff543e" offset=".5"/>
+                                    <stop stop-color="#c837ab" offset="1"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M65.033 0C37.891 0 29.953.028 28.41.156c-5.57.463-9.036 1.34-12.812 3.22-2.91 1.445-5.205 3.12-7.47 5.468-4.125 4.282-6.625 9.55-7.53 15.812-.44 3.04-.568 3.66-.594 19.188-.01 5.176 0 11.988 0 21.125 0 27.12.03 35.05.16 36.59.45 5.42 1.3 8.83 3.1 12.56 3.44 7.14 10.01 12.5 17.75 14.5 2.68.69 5.64 1.07 9.44 1.25 1.61.07 18.02.12 34.44.12 16.42 0 32.84-.02 34.41-.1 4.4-.207 6.955-.55 9.78-1.28a27.22 27.22 0 0017.75-14.53c1.765-3.64 2.66-7.18 3.065-12.317.088-1.12.125-18.977.125-36.81 0-17.836-.04-35.66-.128-36.78-.41-5.22-1.305-8.73-3.127-12.44-1.495-3.037-3.155-5.305-5.565-7.624-4.3-4.108-9.56-6.608-15.829-7.512C102.338.157 101.733.027 86.193 0z"
+                                  fill="url(#c)"/>
+                            <path d="M65.033 0C37.891 0 29.953.028 28.41.156c-5.57.463-9.036 1.34-12.812 3.22-2.91 1.445-5.205 3.12-7.47 5.468-4.125 4.282-6.625 9.55-7.53 15.812-.44 3.04-.568 3.66-.594 19.188-.01 5.176 0 11.988 0 21.125 0 27.12.03 35.05.16 36.59.45 5.42 1.3 8.83 3.1 12.56 3.44 7.14 10.01 12.5 17.75 14.5 2.68.69 5.64 1.07 9.44 1.25 1.61.07 18.02.12 34.44.12 16.42 0 32.84-.02 34.41-.1 4.4-.207 6.955-.55 9.78-1.28a27.22 27.22 0 0017.75-14.53c1.765-3.64 2.66-7.18 3.065-12.317.088-1.12.125-18.977.125-36.81 0-17.836-.04-35.66-.128-36.78-.41-5.22-1.305-8.73-3.127-12.44-1.495-3.037-3.155-5.305-5.565-7.624-4.3-4.108-9.56-6.608-15.829-7.512C102.338.157 101.733.027 86.193 0z"
+                                  fill="url(#d)"/>
+                            <path d="M65.003 17c-13.036 0-14.672.057-19.792.29-5.11.234-8.598 1.043-11.65 2.23-3.157 1.226-5.835 2.866-8.503 5.535-2.67 2.668-4.31 5.346-5.54 8.502-1.19 3.053-2 6.542-2.23 11.65C17.06 50.327 17 51.964 17 65s.058 14.667.29 19.787c.235 5.11 1.044 8.598 2.23 11.65 1.227 3.157 2.867 5.835 5.536 8.503 2.667 2.67 5.345 4.314 8.5 5.54 3.054 1.187 6.543 1.996 11.652 2.23 5.12.233 6.755.29 19.79.29 13.037 0 14.668-.057 19.788-.29 5.11-.234 8.602-1.043 11.656-2.23 3.156-1.226 5.83-2.87 8.497-5.54 2.67-2.668 4.31-5.346 5.54-8.502 1.18-3.053 1.99-6.542 2.23-11.65.23-5.12.29-6.752.29-19.788 0-13.036-.06-14.672-.29-19.792-.24-5.11-1.05-8.598-2.23-11.65-1.23-3.157-2.87-5.835-5.54-8.503-2.67-2.67-5.34-4.31-8.5-5.535-3.06-1.187-6.55-1.996-11.66-2.23-5.12-.233-6.75-.29-19.79-.29zm-4.306 8.65c1.278-.002 2.704 0 4.306 0 12.816 0 14.335.046 19.396.276 4.68.214 7.22.996 8.912 1.653 2.24.87 3.837 1.91 5.516 3.59 1.68 1.68 2.72 3.28 3.592 5.52.657 1.69 1.44 4.23 1.653 8.91.23 5.06.28 6.58.28 19.39s-.05 14.33-.28 19.39c-.214 4.68-.996 7.22-1.653 8.91-.87 2.24-1.912 3.835-3.592 5.514-1.68 1.68-3.275 2.72-5.516 3.59-1.69.66-4.232 1.44-8.912 1.654-5.06.23-6.58.28-19.396.28-12.817 0-14.336-.05-19.396-.28-4.68-.216-7.22-.998-8.913-1.655-2.24-.87-3.84-1.91-5.52-3.59-1.68-1.68-2.72-3.276-3.592-5.517-.657-1.69-1.44-4.23-1.653-8.91-.23-5.06-.276-6.58-.276-19.398s.046-14.33.276-19.39c.214-4.68.996-7.22 1.653-8.912.87-2.24 1.912-3.84 3.592-5.52 1.68-1.68 3.28-2.72 5.52-3.592 1.692-.66 4.233-1.44 8.913-1.655 4.428-.2 6.144-.26 15.09-.27zm29.928 7.97a5.76 5.76 0 105.76 5.758c0-3.18-2.58-5.76-5.76-5.76zm-25.622 6.73c-13.613 0-24.65 11.037-24.65 24.65 0 13.613 11.037 24.645 24.65 24.645C78.616 89.645 89.65 78.613 89.65 65S78.615 40.35 65.002 40.35zm0 8.65c8.836 0 16 7.163 16 16 0 8.836-7.164 16-16 16-8.837 0-16-7.164-16-16 0-8.837 7.163-16 16-16z"
+                                  fill="#fff"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- JS Script -->
+<script src="../static/js/jquery-3.5.1.min.js"></script>
+<script src="../static/js/metasign.js"></script>
+<!--<script src="../static/js/uv.js"></script>-->
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+<script src="../static/js/wavesea.js"></script>
+<!--<script src="../static/js/switch.js"></script>-->
+
+</body>
+</html>

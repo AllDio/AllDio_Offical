@@ -1,0 +1,109 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/*html, body {*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*body {*/
+/*    background-color: #b7b4f7;*/
+/*    color: #808080;*/
+/*    font-family: Quicksand, sans-serif;*/
+/*    font-weight: bold;*/
+/*    left: 50%;*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*}*/
+
+.boarding-pass {
+    background-color: #fff;
+    box-shadow: 0 16px 180px rgba(187, 187, 189, 0.9);
+    overflow: hidden;
+    height: 550px;
+    width: 500px;
+    text-transform: uppercase;
+    /*mix-blend-mode: overlay;*/
+    scale: 0.65;
+    margin-top: -60px;
+    border-radius: 20px;
+    font-family: Quicksand, sans-serif;
+}
+
+.boarding-pass__title-bar {
+    background-color: #433f3f;
+    color: #808080;
+    font-size: 16px;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.boarding-pass__itinerary {
+    background-color: #8ae487;
+    color: #fff;
+    padding: 50px;
+    width: 100%;
+    height: 200px;
+    font-weight: 600;
+}
+
+.boarding-pass__origin, .boarding-pass__destination {
+    float: left;
+    width: 100%;
+}
+
+.boarding-pass__airport {
+    display: block;
+    font-size: 95px;
+    line-height: 0.75em;
+    margin-bottom: 10px;
+    vertical-align: top;
+    float: left;
+    letter-spacing: 0.1px;
+}
+
+.boarding-pass__city {
+    width: 100%;
+    float: left;
+    text-align: left;
+    margin-left: 10px;
+    padding-top: 5px;
+    font-size: 16px;
+    /*padding-left: 8px;*/
+}
+
+.boarding-pass__flight-info {
+    color: #433f3f;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 34px 40px;
+    text-align: left;
+}
+
+.boarding-pass__flight-info small {
+    color: #8ae487;
+    display: block;
+    font-size: 14px;
+}
+
+.boarding-pass__passenger {
+    margin-bottom: 30px;
+}
+
+.boarding-pass__flight, .boarding-pass__seat, .boarding-pass__gate {
+    float: left;
+    margin: 0 60px 10px 0;
+}
+
+.boarding-pass__gate {
+    margin: 0;
+}
+
+.barcode {
+    font-family: "Libre Barcode 128", cursive;
+    font-size: 75px;
+    color: #3d3d3d;
+}
+

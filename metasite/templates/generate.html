@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate</title>
+    <link rel="stylesheet" href="../static/css/buttons.css"/>
+    <link rel="stylesheet" href="../static/css/style.css"/>
+    <link rel="stylesheet" href="../static/css/uv.css"/>
+    <link rel="stylesheet" href="../static/css/cardpaper.css"/>
+    <link rel="stylesheet" href="../static/css/libraryx.css"/>
+    <link rel="stylesheet" href="../static/css/metasign.css"/>
+    <link rel="stylesheet" href="../static/css/cardinhouse.css"/>
+    <link rel="stylesheet" href="../static/css/checkbox.css"/>
+    <link href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/loadingpupple.css"/>
+</head>
+<body>
+
+<main style="width: 100%;height: 100%">
+    <!-- PreLoading-->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,300,400,500,600,700,800');
+    </style>
+
+    <!-- Background Universe-->
+    {# <div class="bb" id="universe"></div>#}
+
+    <!-- Top Logo-->
+    <div style="width: 100%">
+        <div class="py-2"></div>
+        <img src="../static/img/Amplus_black.png" style="width: 150px;scale: 0.62;float: left;opacity: 0.6;padding:15px"
+             alt=""/>
+    </div>
+
+    <!-- Menu Title -->
+    <div class="inline-flex ee">
+        {% for title in titles %}
+            <button style="letter-spacing: 1px;height: 50px">
+                <div class="lg:pd-15 md:pd-12 sm:pd-6 sx:pd-3" style="width: 100%;color: #2B3A42">
+                    {% if forloop.last %}
+                        <a class="dark:text-white" id="username_show" style="font-weight: 800">Pannel</a>
+                    {% else %}
+                        <a class="dark:text-white" href="{{ title.href }}" style="opacity: 0.5;">{{ title.name }}</a>
+                    {% endif %}
+                </div>
+            </button>
+        {% endfor %}
+    </div>
+
+
+    <div style="height: 100%">
+        <div style="height: 14%;"></div>
+        <div style="height:  11%;">
+            <!-- Notice on wall -->
+            <div style="height: 100%;width:100%;position: absolute">
+                <div style="text-align: center;font-family: Raleway,serif">
+                    <div class="inline-flex" style="opacity: 0.8">
+                        <!-- hint words-->
+                        <div style="font-weight: 1000;display: inline-flex;color: black;font-size: 50px;letter-spacing:2px;height: 40px;line-height: 40px">
+                            Composer
+                        </div>
+                        {#  <button class="fa fa-plus-circle"#}
+                        {#  style="color: rgba(0,0,0,0.71);font-size: 25px;margin-left: 20px;height: 45px;line-height: 40px"></button>#}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Gallary -->
+        <div style="height: 55%;width: 100%;">
+            <div class="" style="height: 100%;width: 100%;">
+                <div class="inline-flex" style="height: 100%;width: 100%;">
+                    <!-- Plus Button -->
+                    <div style="text-align: center;width: 10%;line-height: 100%;height: 100%;z-index: 100;margin-left: 2%">
+                        <div style="height: 25%"></div>
+                        <div id="cancel" class="opacity-0">
+                            <button class="fa fa-close"
+                                    style="color: rgba(0,0,0,0.16);font-size: 18px">
+                            </button>
+                        </div>
+
+                        <div style="height: 12%"></div>
+
+                        <div>
+                            <button class="crossfadez hover fa fa-plus-circle" data-bs-toggle="modal"
+                                    data-bs-target="#placeBidModal2"
+                                    style="color: rgba(0,0,0,0.29);font-size: 35px">
+                            </button>
+                        </div>
+
+                        <div style="height: 12%"></div>
+
+                        <div id="trash" class="opacity-0">
+                            <button class="fa fa-trash-alt"
+                                    style="color: rgba(0,0,0,0.16);font-size: 18px" hidden="hidden">
+                            </button>
+                        </div>
+                        <div style="height: 25%"></div>
+                    </div>
+
+
+                    <!-- Card -->
+                    <div class="overflow-x-auto slide-container inline-flex"
+                         style="height: 100%;width: 100%;z-index: 10">
+                        <div style="height: 100%;width: 100%;">
+                            <div class="inline-flex" style="width: 100%">
+                                {% for card in cards %}
+                                    <div id="upper{{ forloop.counter }}" class="wrapperx inline-flex"
+                                         style="scale: 0.75;width: 100%;height: 100%">
+                                        <div class="clash-card barbarian">
+                                            <label for="bool{{ forloop.counter }}"></label><input
+                                                id="bool{{ forloop.counter }}" value="false" hidden>
+                                            <div class="clash-card__image clash-card__image--{{ card.bg_icon }}">
+                                                <button>
+                                                    <img src="{{ card.obj_icon }}" alt="{{ card.bg_icon }}"/>
+                                                </button>
+                                            </div>
+                                            <div class="clash-card__level clash-card__level--{{ card.bg_icon }}"
+                                                 style="font-size:15px;line-height: 50px;letter-spacing: 1px">
+                                                Level {{ card.level }}
+                                            </div>
+                                            <button class="clash-card__unit-name">{{ card.crdname }}</button>
+                                            <div class="clash-card__unit-description"
+                                                 style="letter-spacing: 0.9px;font-size: 11px">{{ card.intro }}</div>
+                                            <div class="clash-card__unit-stats clash-card__unit-stats--{{ card.bg_icon }} clearfix">
+                                                <button class="one-third">
+                                                    <div class="stat"
+                                                         style="font-weight: 600">{{ card.value_a }}<sup>{{ card.type_aa }}</sup>
+                                                    </div>
+                                                    <div class="stat-value">{{ card.type_a }}</div>
+                                                </button>
+
+                                                <button class="one-third">
+                                                    <div class="stat" style="font-weight: 600">{{ card.value_b }}</div>
+                                                    <div class="stat-value">{{ card.type_b }}</div>
+                                                </button>
+
+                                                <button class="one-third no-border">
+                                                    <div class="stat" style="font-weight: 600">{{ card.value_c }}</div>
+                                                    <div class="stat-value">{{ card.type_c }}</div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        {% if forloop.last %}
+                                            <div style="width: 20vh"></div>
+                                        {% endif %}
+                                        <div style="width: 1vh"></div>
+                                    </div>
+                                    <script src="../static/js/jquery-3.5.1.min.js"></script>
+                                    <script>
+                                        $("#upper{{ forloop.counter }}").click(function () {
+                                            if ($("#bool{{ forloop.counter }}").val() === 'true') {
+                                                $("#cancel").removeClass().addClass('fadeout')
+                                                $("#trash").removeClass().addClass('fadeout')
+                                                $("#bool{{ forloop.counter }}").val('false')
+                                                $("#upper{{ forloop.counter }}").css({
+                                                    'opacity': '1'
+                                                })
+                                            } else {
+                                                $("#cancel").removeClass().addClass('fadein').click(function () {
+                                                    for (i = 1; i < parseInt({{ cardcount }}); i++) {
+                                                        if ($("#bool{{ forloop.counter }}").val() === 'true') {
+                                                            $("#bool{{ forloop.counter }}").click()
+                                                        } else {
+
+                                                        }
+                                                    }
+                                                })
+                                                $("#trash").removeClass().addClass('fadein')
+                                                $("#bool{{ forloop.counter }}").val('true')
+                                                $("#upper{{ forloop.counter }}").css({
+                                                    'opacity': '0.3'
+                                                })
+                                            }
+                                        })
+                                    </script>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div style="width: 100%;height: 10%;z-index: 100;position: absolute;margin: 0 auto">
+            <div style="height: 20%"></div>
+            <button class="custom-btn btn-16" style="color: black;letter-spacing: 0.5px;font-size: 10px;
+            font-family: Raleway,serif;font-weight: 500">GENERATE
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Place Bid Modal -->
+    <div class="modal fade lg:scalelgmd" id="placeBidModal2" tabindex="1" aria-labelledby="placeBidLabel"
+         aria-hidden="true" style="margin-top: 25vh;z-index: 101">
+        <input id="cardidx" value="1" hidden="hidden"/>
+        <div class="modal-dialog" style="width: 100%;height: 70%">
+            <!-- Close Button -->
+            <div class="modal-content containerz clearfix" style="scale: 0.85;display: block;">
+                <div class="shoe-details-left" style="border: solid">
+                    <img src="../static/img/Amplus.png" alt="logo" class="logo"/>
+
+                    <div id="card_name" class="product-title" style="font-weight: 800;letter-spacing: 1px">
+                        <strong id="card_level"></strong>
+                    </div>
+
+                    <div id="card_infoA" class="product-description"></div>
+
+                    <img id="card_icon" src='#' alt="" class="product-shot animated fadeInLeft"/>
+
+                    <div id="card_value" class="product-price"></div>
+
+                    <div id="card_infoB" class="product-price-details"></div>
+                </div>
+                <script src="../static/js/jquery-3.5.1.min.js"></script>
+                <script>
+                    var card_name, card_level, card_infoA, card_infoB, card_icon, card_value
+                    var cards = "{{ housecards }}".split(',')
+                    for (i = 1; i < parseInt({{housecardscnt}}); i++) {
+                        if (i.toString() === $("#cardidx").val()) {
+                            card_name = cards[1].split(':')[1].split('&#x27;')[1] + ' ' + cards[0].split(':')[1].split('&#x27;')[1]
+                            card_level = cards[2].split(':')[1].split('&#x27;')[1]
+                            card_infoA = cards[3].split(':')[1].split('&#x27;')[1]
+                            card_infoB = cards[4].split(':')[1].split('&#x27;')[1]
+                            card_icon = cards[5].split(':')[1].split('&#x27;')[1]
+                            card_value = cards[6].split(':')[1].split('&#x27;')[1]
+                            break
+                        }
+                    }
+                    $("#card_name").text(card_name)
+                    $("#card_level").text(card_level)
+                    $("#card_infoA").text(card_infoA)
+                    $("#card_infoB").text(card_infoB)
+                    $("#card_icon").attr({src: '../static/img/chord.png'})
+                    $("#card_value").text(card_value)
+                </script>
+
+                <div class="shoe-details-right">
+                    <span class="product-title"
+                          style="letter-spacing: 1px;font-size: 25px">MUSICIAN <strong> CARD</strong></span>
+                    <span class="label" style="letter-spacing: 0.5px">Super</span>
+
+                    <div class="product-category"></div>
+
+                    <div class="product-stars" style="scale: 1.5;margin-top: 30px">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star gray"></i>
+                        <i class="fa fa-star gray"></i>
+                    </div>
+
+                    <div class="inline-flex">
+                        {% for card in cardtypes %}
+                            <div class="block">
+                                <ul class="product-tabs">
+                                    {% if forloop.first %}
+                                        <li class="active"><a href="#">{{ card.title }}</a></li>
+                                    {% else %}
+                                        <li class=""><a href="#">{{ card.title }}</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <div style="height: 15px"></div>
+
+
+                    <div class="inline-flex" style="width: 90%;height:110px;z-index: 101">
+                        <div class="inline-flex overflow-x-auto" style="height: 110px;line-height:50px">
+                            {% for card in housecards %}
+                                <div style="height: 150px;width: 115px;" class="inline-flex">
+                                    <!-- card index -->
+                                    <div style="height: 110px;width: 50px">
+                                        <ul class="sizes" style="scale: 0.85;text-align:left">
+                                            {% if forloop.first %}
+                                                <li class="active">
+                                                    <a style="font-weight:500;">0{{ forloop.counter }}</a>
+                                                </li>
+                                            {% else %}
+                                                <li style="">
+                                                    {% if forloop.counter > 9 %}
+                                                        <a style="font-weight:500">{{ forloop.counter }}</a>
+                                                    {% else %}
+                                                        <a style="font-weight:500">0{{ forloop.counter }}</a>
+                                                    {% endif %}
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+
+                                    <!-- card name -->
+                                    <div style="text-align: left;height: 110px">
+                                        <div class="sizes"
+                                             style="width: 40px;height:15px;font-family: Raleway,serif;font-weight: 800;letter-spacing: 0.3px;font-size: 10px;">{{ card.card_sname }}</div>
+                                        <div class="sizes"
+                                             style="width: 40px;height:15px;font-family: Raleway,serif;font-weight: 400;letter-spacing: 0.3px;font-size: 11px">{{ card.card_name }}</div>
+                                        <div style="height: 35px"></div>
+                                        <!-- checkbox -->
+                                        <div style="width: 40px;height: 15px;opacity: 0.9;scale: 0.8">
+                                            <input id="cx1" type="checkbox" class="sizexs"
+                                                   style="border-radius: 100px"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div style="padding: 5px;scale: 0.8">
+                        <div style="height: 20px"></div>
+                        <a class="btn btn-primary">ADD</a>
+                        <a style="width: 10px"></a>
+                        <a class="btn btn-secondary">BACK</a>
+                    </div>
+                </div>
+
+                <div class="close-button btn-close" id="closerbtn" type="button" data-bs-dismiss="modal"
+                     aria-label="Close" style="z-index: 101">&times;
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+</body>
+
+<script src="../static/js/jquery-3.5.1.min.js"></script>
+<script src="../static/js/countdown.bundle.js"></script>
+<script src="../static/js/app.bundle.js"></script>
+<script src="../static/js/cardpaper.js"></script>
+<script src="../static/js/three.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+{#<script src="../static/js/loadingpupple.js"></script>#}
+</html>

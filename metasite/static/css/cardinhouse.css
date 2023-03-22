@@ -1,0 +1,288 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/*body {*/
+/*    background: #e2ddde;*/
+/*    font: 12px/18px "Lato", Arial, sans-serif;*/
+
+/*}*/
+
+.containerz {
+    background: white;
+    width: 750px;
+    height: 401px;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: -1px 15px 30px -6px rgba(196, 196, 196, 1);
+}
+
+strong {
+    font-weight: 900;
+}
+
+.shoe-details-left {
+    float: left;
+    background: #764eee;
+    background: linear-gradient(#764eee, #75bb9e);
+    width: 270px;
+    color: white;
+    padding: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.shoe-details-left .logo {
+    width: 75px;
+    margin-bottom: 55px;
+
+}
+
+.shoe-details-left .product-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+
+}
+
+.shoe-details-left .product-description {
+    width: 200px;
+    font-size: 12px;
+}
+
+.shoe-details-left .product-shot {
+    width: 250px;
+    padding: 30px;
+    /*margin-left: -54px;*/
+    /*margin-top: -20px;*/
+}
+
+.shoe-details-left .product-price, .shoe-details-left .product-price-details {
+    text-align: center;
+
+}
+
+.shoe-details-left .product-price {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.shoe-details-right {
+    float: left;
+    width: 470px;
+    padding: 30px;
+    /*text-transform: uppercase;*/
+}
+
+.shoe-details-right .product-title {
+    font-size: 20px;
+
+}
+
+.shoe-details-right .label {
+    background: #a359f1;
+    color: white;
+    border-radius: 5px;
+    padding: 4px 7px;
+    font-size: 10px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+.shoe-details-right .product-category {
+    margin: 5px 0 10px;
+
+}
+
+.shoe-details-right .product-stars {
+    margin-bottom: 30px;
+
+}
+
+.shoe-details-right .product-stars .gray {
+    color: #999;
+
+}
+
+.shoe-details-right .product-tabs {
+    /*margin-bottom: 20px;*/
+    font-size: 12px;
+    margin: 15px;
+    letter-spacing: 0.5px;
+}
+
+.shoe-details-right .product-tabs li {
+    display: inline;
+    margin-right: 10px;
+    padding: 0 7px;
+    color: #764eee;
+
+}
+
+.shoe-details-right .product-tabs li.active {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #764eee;
+
+}
+
+.shoe-details-right .product-tabs li a {
+    color: #cacaca;
+    text-decoration: none;
+    font-weight: 700;
+
+}
+
+.shoe-details-right .product-tabs li a:hover, .shoe-details-right .product-tabs li a:focus {
+    color: #764eee;
+
+}
+
+.shoe-details-right .product-tabs li.active > a {
+    color: #764eee !important;
+
+}
+
+.shoe-details-right .tab-content {
+    text-transform: none;
+    font-size: 14px;
+    margin-top: 20px;
+
+}
+
+/*.shoe-details-right h2 {*/
+/*    font-weight: 900;*/
+/*    margin-bottom: 10px;*/
+
+/*}*/
+
+/*.shoe-details-right .sizes {*/
+/*    margin-bottom: 20px;*/
+
+/*}*/
+
+.shoe-details-right .sizes li {
+    display: inline;
+    font-size: 20px;
+    /*margin-right: 25px;*/
+    padding: 7px;
+
+}
+
+/*.shoe-details-right .sizes li.active, .shoe-details-right .sizes li:hover {*/
+/*    background: #764eee;*/
+/*    border-radius: 50%;*/
+/*    color: white;*/
+/*}*/
+
+/*.shoe-details-right .sizes li.active > a, .shoe-details-right .sizes li:hover > a {*/
+/*    color: white;*/
+
+/*}*/
+
+.shoe-details-right .sizes li a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.shoe-details-right .colours {
+    margin: 20px 0 60px;
+
+}
+
+.shoe-details-right .colours li {
+    display: inline;
+    margin-right: 30px;
+
+}
+
+.shoe-details-right .colours li.active > a {
+    border: 1px solid #00d3ef;
+    border-radius: 100%;
+    padding: 14px 7px 3px 7px;
+
+}
+
+.shoe-details-right .circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+
+}
+
+.shoe-details-right .blue {
+    background: #00d3ef;
+
+}
+
+.shoe-details-right .orange {
+    background: #764eee;
+
+}
+
+.shoe-details-right .yellow {
+    background: #ffd203;
+
+}
+
+.shoe-details-right .black {
+    background: black;
+
+}
+
+.shoe-details-right a.btn {
+    text-decoration: none;
+    background: #ccc;
+    color: white;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 16px;
+}
+
+.shoe-details-right a.btn:hover {
+    background: #d9d9d9;
+
+}
+
+.shoe-details-right a.btn-primary {
+    background: #9dc0c5;
+    margin-right: 30px;
+
+}
+
+.shoe-details-right a.btn-primary:hover {
+    background: #a060e7;
+
+}
+
+.close-button {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    font-size: 50px;
+    color: #b8b8b8;
+    background: white;
+    border-radius: 50%;
+    padding: 10px 10px 15px 10px;
+    box-shadow: -1px 3px 20px -6px rgba(196, 196, 196, 1);
+    scale: 0.75;
+}
+
+.close-button:hover {
+    background: #fbfafa;
+    cursor: pointer;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}

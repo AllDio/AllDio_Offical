@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="183f3e19-097b-4973-b605-a1d5b4a37c33" name="alldio_copy">
+        <fileTransfer rootFolder="/www/wwwroot/alldio" accessType="SFTP" host="34.125.236.75" port="22" sshConfigId="f582b96a-dc23-4810-885e-bd9d1d25af77" sshConfig="root@34.125.236.75:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

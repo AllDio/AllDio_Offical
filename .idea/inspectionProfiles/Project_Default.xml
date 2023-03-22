@@ -1,0 +1,92 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CssUnknownProperty" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myCustomPropertiesEnabled" value="true" />
+      <option name="myIgnoreVendorSpecificProperties" value="false" />
+      <option name="myCustomPropertiesList">
+        <value>
+          <list size="10">
+            <item index="0" class="java.lang.String" itemvalue="transform" />
+            <item index="1" class="java.lang.String" itemvalue="enable-background" />
+            <item index="2" class="java.lang.String" itemvalue="flex-line-pack" />
+            <item index="3" class="java.lang.String" itemvalue="user-select" />
+            <item index="4" class="java.lang.String" itemvalue="scrollbar-width" />
+            <item index="5" class="java.lang.String" itemvalue="perspective" />
+            <item index="6" class="java.lang.String" itemvalue="transform-style" />
+            <item index="7" class="java.lang.String" itemvalue="text-alignment" />
+            <item index="8" class="java.lang.String" itemvalue="animation" />
+            <item index="9" class="java.lang.String" itemvalue="animation-delay" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="data" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="15">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="style" />
+            <item index="7" class="java.lang.String" itemvalue="div" />
+            <item index="8" class="java.lang.String" itemvalue="polyline" />
+            <item index="9" class="java.lang.String" itemvalue="circle" />
+            <item index="10" class="java.lang.String" itemvalue="li" />
+            <item index="11" class="java.lang.String" itemvalue="br" />
+            <item index="12" class="java.lang.String" itemvalue="femergenode" />
+            <item index="13" class="java.lang.String" itemvalue="p" />
+            <item index="14" class="java.lang.String" itemvalue="xbody" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="24">
+            <item index="0" class="java.lang.String" itemvalue="altgraph" />
+            <item index="1" class="java.lang.String" itemvalue="audiodb" />
+            <item index="2" class="java.lang.String" itemvalue="tensorflow-estimator" />
+            <item index="3" class="java.lang.String" itemvalue="alembic" />
+            <item index="4" class="java.lang.String" itemvalue="h5py" />
+            <item index="5" class="java.lang.String" itemvalue="about" />
+            <item index="6" class="java.lang.String" itemvalue="astor" />
+            <item index="7" class="java.lang.String" itemvalue="audio-to-midi" />
+            <item index="8" class="java.lang.String" itemvalue="gast" />
+            <item index="9" class="java.lang.String" itemvalue="attrs" />
+            <item index="10" class="java.lang.String" itemvalue="tensorflow" />
+            <item index="11" class="java.lang.String" itemvalue="autopage" />
+            <item index="12" class="java.lang.String" itemvalue="aubio" />
+            <item index="13" class="java.lang.String" itemvalue="bitsets" />
+            <item index="14" class="java.lang.String" itemvalue="grpcio" />
+            <item index="15" class="java.lang.String" itemvalue="TBB" />
+            <item index="16" class="java.lang.String" itemvalue="uWSGI" />
+            <item index="17" class="java.lang.String" itemvalue="numpy" />
+            <item index="18" class="java.lang.String" itemvalue="pandas" />
+            <item index="19" class="java.lang.String" itemvalue="scipy" />
+            <item index="20" class="java.lang.String" itemvalue="six" />
+            <item index="21" class="java.lang.String" itemvalue="requests" />
+            <item index="22" class="java.lang.String" itemvalue="urllib3" />
+            <item index="23" class="java.lang.String" itemvalue="idna" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+  </profile>
+</component>

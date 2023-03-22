@@ -1,0 +1,227 @@
+/* Imports */
+/*@import url('https://fonts.googleapis.com/css?family=Raleway:400,300,700');*/
+/*@import url('bourbon');*/
+
+/* Variables */
+:root {
+    --color-background: #25241d;
+}
+
+/* CSS */
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    /*background-color: var(--color-background);*/
+    /*color: #515044;*/
+    font-family: 'Raleway', sans-serif;
+}
+
+.music-player-container {
+    /*display: inline-block;*/
+    /*height: 370px;*/
+    /*position: absolute;*/
+    /*min-width: 460px;*/
+    /*left: 50%;*/
+    /*top: 50%;*/
+    transform: translate(-50%, -50%);
+    scale: 0.5;
+    margin: 0 auto;
+    width: 100%;
+    border: solid;
+}
+
+.music-player-container:after {
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: -2px;
+    content: ' ';
+    display: block;
+    height: 10px;
+    left: 19px;
+    position: absolute;
+    transform: rotate(-3deg);
+    width: 70%;
+    z-index: 0;
+    filter: blur(8px);
+}
+
+.music-player {
+    /*background-color: #e76969;*/
+    height: 315px;
+    /*padding: 20px 20px 10px 30px;*/
+    position: absolute;
+    padding: 30px;
+    text-align: right;
+    /*border:solid;*/
+    z-index: 3;
+    margin-left: -50px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: silver solid;
+}
+
+.player-content-container {
+    position: relative;
+    margin-left: -50px;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.artist-name {
+    font-size: 28px;
+    font-weight: normal;
+    margin: 0 0 0.75em 0;
+}
+
+.album-title {
+    /*font-size: 5px;*/
+    font-weight: 500;
+    margin: 0 0 1em 0;
+}
+
+.song-title {
+    /*font-size: 18px;*/
+    font-weight: 200;
+    margin: 0 0 1.5em 0;
+}
+
+.album {
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.65);
+    height: 315px;
+    margin-left: 250px;
+    /*margin-top: 27px;*/
+    position: relative;
+    width: 315px;
+    z-index: 10;
+}
+
+.album-art {
+    background: #fff url('https://media1.popsugar-assets.com/files/thumbor/L-VT9k0GKckWWnpo3n2YBq4f9tE/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/08/03/846/n/37139775/2d0d134e5983773fe90560.65157921_edit_img_image_17921777_1501786115/i/Camila-Cabello-Havana-Song.jpg') center/cover no-repeat;
+    height: 315px;
+    position: relative;
+    width: 315px;
+    z-index: 10;
+    -webkit-border-bottom-right-radius: 80px;
+}
+
+
+.album-art {
+    background: #fff url('https://media1.popsugar-assets.com/files/thumbor/L-VT9k0GKckWWnpo3n2YBq4f9tE/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/08/03/846/n/37139775/2d0d134e5983773fe90560.65157921_edit_img_image_17921777_1501786115/i/Camila-Cabello-Havana-Song.jpg') center/cover no-repeat;
+    height: 315px;
+    position: relative;
+    width: 315px;
+    z-index: 10;
+    -webkit-border-bottom-right-radius: 80px;
+}
+
+
+.vinyl {
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/vinyl.png'),
+    url('https://media1.popsugar-assets.com/files/thumbor/L-VT9k0GKckWWnpo3n2YBq4f9tE/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/08/03/846/n/37139775/2d0d134e5983773fe90560.65157921_edit_img_image_17921777_1501786115/i/Camila-Cabello-Havana-Song.jpg');
+    background-position: center, center;
+    background-size: cover, 40% auto;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    height: 300px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 300px;
+    z-index: 5;
+    will-change: transform, left;
+    animation: spin 5s linear infinite;
+    transition: all 500ms;
+}
+
+.is-playing .vinyl {
+    left: 52%;
+}
+
+.music-player-controls {
+    text-align: center;
+}
+
+[class^="control-"] {
+    border-radius: 100%;
+    display: inline-block;
+    height: 44px;
+    margin: 0 3px;
+    width: 43px;
+}
+
+[class^="control-"]:hover {
+    cursor: pointer;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*0% {*/
+/*    opacity: 0;*/
+/*    transform(rotate: 30 deg);*/
+/*}*/
+
+/*50% {*/
+/*    transform(rotate: 180 deg);*/
+/*}*/
+
+
+/*100% {*/
+/*    opacity: 1;*/
+/*    transform(rotate: 360 deg));*/
+/*}*/
+/*}*/
+
+
+
+.albumx {
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.65);
+    height: 315px;
+    margin-left: 250px;
+    /*margin-top: 27px;*/
+    position: relative;
+    width: 315px;
+    z-index: 10;
+    scale: 0.6;
+}
+
+
+.albumx-art {
+    height: 315px;
+    position: relative;
+    width: 315px;
+    z-index: 10;
+    border-radius: 10px;
+    border-top-right-radius: 130px;
+    /*-webkit-border-bottom-right-radius: 80px;*/
+}
+
+.vinylx {
+    background-position: center, center;
+    background-size: cover, 40% auto;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    height: 300px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    width: 300px;
+    z-index: 5;
+    will-change: transform, left;
+    animation: spin 6.5s linear infinite;
+    transition: all 500ms;
+}

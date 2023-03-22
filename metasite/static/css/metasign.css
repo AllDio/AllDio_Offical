@@ -1,0 +1,328 @@
+body {
+    font-family: "Raleway", serif;
+}
+
+.back {
+    /*background: linear-gradient(120grad, rgb(100, 57, 134), rgb(152, 174, 213));*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.registration-form {
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    top: 15%;
+    background: transparent;
+}
+
+.registration-form header {
+    position: relative;
+    z-index: 4;
+    background: white;
+    padding: 20px 40px;
+    border-radius: 15px 15px 0 0;
+}
+
+.registration-form header h1 {
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    color: #333;
+    font-size: 23px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.registration-form header p {
+    word-spacing: 0px;
+    color: rgb(159, 172, 182);
+    font-size: 17px;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.registration-form form {
+    position: relative;
+}
+
+.registration-form .input-section {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 75px;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in;
+}
+
+.registration-form .input-section.folded {
+    width: 95%;
+    margin-top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+}
+
+.registration-form .input-section.folded input {
+    background-color: rgb(233, 226, 192);
+}
+
+.registration-form .input-section.folded span {
+    background-color: rgb(233, 226, 192);
+}
+
+.registration-form .input-section.folded + .folded {
+    width: 90%;
+    margin-top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 0;
+}
+
+.registration-form .input-section.folded + .folded input {
+    background-color: rgb(225, 188, 239);
+}
+
+.registration-form .input-section.folded + .folded span {
+    background-color: rgb(225, 188, 239);
+}
+
+.registration-form .input-section.fold-up {
+    margin-top: -75px;
+}
+
+.registration-form form input {
+    background: white;
+    color: rgb(143, 143, 214);
+    width: 80%;
+    border: 0;
+    padding: 20px 40px;
+    margin: 0;
+}
+
+.registration-form form input:focus {
+    outline: none;
+}
+
+.registration-form form input::placeholder {
+    color: rgb(143, 143, 214);
+    font-weight: 100;
+}
+
+.animated-button {
+    width: 20%;
+    background-color: rgb(212, 212, 255);
+}
+
+.animatedleft-button {
+    width: 10%;
+    background-color: rgb(212, 212, 255);
+}
+
+.animated-button span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 75px;
+    text-align: center;
+    height: 75px;
+    transition: all 0.2s ease-in;
+}
+
+.animated-button span i {
+    font-size: 25px;
+    color: rgb(153, 153, 248);
+}
+
+.animated-button .next-button {
+    background: transparent;
+    color: rgb(153, 153, 248);
+    font-weight: 100;
+    width: 100%;
+    border: 0;
+}
+
+.next {
+    margin-top: -75px;
+}
+
+.signsuccess {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 75px;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in;
+    background: #4a9cc7;
+    margin-top: -75px;
+}
+
+.signsuccess p {
+    color: white;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.logsuccess {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 75px;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in;
+    /*background: limegreen;*/
+    background: #9d6dcb;
+    margin-top: -75px;
+}
+
+.logsuccess p {
+    color: white;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.resetsuccess p {
+    color: white;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+}
+
+.resetsuccess {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 75px;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in;
+    /*background: limegreen;*/
+    background: #6bd0bd;
+    margin-top: -75px;
+}
+
+.crossfade {
+    /*color: #61686c;*/
+}
+
+.crossfade:hover {
+    animation-name: cross;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cross {
+    0% {
+        color: #2c3236;
+    }
+
+    /*50% {*/
+    /*    color: #31a131;*/
+    /*}*/
+
+    100% {
+        color: #35be35;
+    }
+}
+
+.crossfadez {
+    /*color: #61686c;*/
+}
+
+.crossfadez:hover {
+    animation-name: crossz;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes crossz {
+    0% {
+        color: #2c3236;
+    }
+
+    /*50% {*/
+    /*    color: #31a131;*/
+    /*}*/
+
+    100% {
+        color: #56aabd;
+        opacity: 0.5;
+    }
+}
+
+
+.fadein {
+    /*color: #61686c;*/
+}
+
+.fadein {
+    animation-name: fadein;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.fadeout {
+    /*color: #61686c;*/
+}
+
+.fadeout {
+    animation-name: fadeout;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/*# sourceMappingURL=metasign.css.map */
