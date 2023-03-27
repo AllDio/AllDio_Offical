@@ -131,7 +131,7 @@ def web3_dapps(request):
 
     from eth_account import Account
     import json
-    key = '77599fb2f4f22ec02ac80798a27843c05ec283372e919e570182ef955976027a'
+    key = '88888'
     account = Account.from_key(key)
     # balance = contract.functions.balanceOf(account).call()
     # print(balance)
