@@ -50,8 +50,8 @@ buycoins = [
     }
 ]
 
-paypal_client_id = 'Ada9UP46XCR6D1H8nYMc2Jz4c81xsGddcKnWGTUY-QpETBDF2_kS_vETgidW4s58qF3-ECwbtnumxKpQ'
-paypal_client_secret = 'ELUkvSR-t9ztslZUzF0A5WidwMshUtQN4kC_EniDvuumr4mfjlOqfMTpjicupf0Md2lvqJOqY56LIdee'
+paypal_client_id = '****'
+paypal_client_secret = '****'
 
 
 def time_controller(days, hour=0, minute=0, second=0, day=datetime.now()):
@@ -189,7 +189,7 @@ def dapps_return(request):
 @already_login
 def song_info(request):
     private_key = request.POST.get('private_key')
-    if private_key == '77599fb2f4f22ec02ac80798a27843c05ec283372e919e570182ef955976027a':
+    if private_key == '':
         result = {
             'name': 'Justin',
             # 'song' : 'http://www.alldio.xyz/hello_music.mp3',
